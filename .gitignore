@@ -1,0 +1,4 @@
+.bundle/
+.tmp/
+.vagrant/
+modules/
