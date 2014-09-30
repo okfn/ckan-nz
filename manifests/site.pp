@@ -11,7 +11,7 @@ node default {
     site_description      => 'A shared environment for managing Data.',
     site_intro            => 'A CKAN test installation',
     site_about            => 'Pilot data catalogue and repository.',
-    plugins               => 'stats text_preview recline_preview datastore resource_proxy pdf_preview spatial_metadata spatial_query hierarchy_form hierarchy_display googleanalytics',
+    plugins               => 'stats text_preview recline_preview datastore resource_proxy pdf_preview spatial_metadata spatial_query hierarchy_form hierarchy_display googleanalytics newzealand_landcare',
     is_ckan_from_repo     => false,
     ckan_package_url      => 'http://packaging.ckan.org/python-ckan_2.2_amd64.deb',
     ckan_package_filename => 'python-ckan_2.2_amd64.deb',
@@ -25,6 +25,7 @@ node default {
   }
   class { 'ckan::ext::hierarchy': }
   class { 'ckan::ext::spatial': }
+  class { 'ckan::ext::newzealand': }
 
   file { '/etc/nginx/sites-available/ckan':
     content => '
